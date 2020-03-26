@@ -11,7 +11,6 @@ import traceback
 import sys
 import telnetlib
 
-
 # from email.utils import parseaddr
 from numpy import unicode
 
@@ -38,7 +37,7 @@ class auto_get_email:
 
     @staticmethod
     def get_info(msg, str_day):
-        #f = open('%s.log' % (str_day), 'w')
+        # f = open('%s.log' % (str_day), 'w')
         text = ""
         for msg in msg:
             subject = msg.get('subject')
@@ -49,10 +48,10 @@ class auto_get_email:
             # print("To: %s"%(email.utils.parseaddr(msg.get('to'))[1]), file = f)
             # print("Subject: %s"%subject, file = f)
             # print("Data:", file = f)
-            text += '\n' + "From: %s"%(email.utils.parseaddr(msg.get('from'))[1]) + '\n'
-            text += "Subject: %s"%subject
+            text += '\n' + "From: %s" % (email.utils.parseaddr(msg.get('from'))[1]) + '\n'
+            text += "Subject: %s" % subject
             # text += 'Data: ' + '\n'
-            #j = 0
+            # j = 0
             # for part in msg.walk():
             #     j = j + 1
             #     fileName = part.get_filename()
@@ -79,18 +78,19 @@ class auto_get_email:
             #         # print(content, file=f)
             #         text += content + '\n'
 
-
         return text
+
     @staticmethod
     def change_date(date1):
         date1 = " ".join(date1[:-2])
         try:
             date1 = time.strptime(date1, '%a, %d %b %Y')
-        except:
+        except ValueError:
             date1 = time.strptime(date1, '%d %b %Y')
         # 邮件时间格式转换
         date2 = time.strftime("%Y%m%d", date1)
         return date2
+
     def run_ing(username, authorization_code, server_name, leader_email):
         # 输入邮件地址, 口令和POP3服务器地址:
         email_user = username
@@ -101,6 +101,7 @@ class auto_get_email:
         day = datetime.date.today()
         str_day = str(day).replace('-', '')
         print(str_day)
+        text = ""
         # 连接到POP3服务器,有些邮箱服务器需要ssl加密，可以使用poplib.POP3_SSL
         try:
             telnetlib.Telnet(pop3_server, 995)
@@ -138,7 +139,8 @@ class auto_get_email:
                 date_email.setdefault(date, set()).add(msg)
             else:
                 continue
-        text = auto_get_email.get_info(date_email[str_day], str_day)
+        if date_email:
+            text = auto_get_email.get_info(date_email[str_day], str_day)
         server.quit()
         return text
 
@@ -147,11 +149,11 @@ if __name__ == '__main__':
     username = "ecust_zhang@126.com"
     authorization_code = "NMMJUJVNCPXKPEYQ"
     server_name = "pop.126.com"
+    leader_email = "2413226942@qq.com"
     try:
-        text = auto_get_email.run_ing(username, authorization_code, server_name)
+        text = auto_get_email.run_ing(username, authorization_code, server_name, leader_email)
         print(text)
     except Exception as e:
         s = traceback.format_exc()
         print(e)
         tra = traceback.print_exc()
-  

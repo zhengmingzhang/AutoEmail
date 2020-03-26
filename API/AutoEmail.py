@@ -1,0 +1,92 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'AutoEmail.ui'
+#
+# Created by: PyQt5 UI code generator 5.10.1
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(866, 237)
+        self.widget = QtWidgets.QWidget(Dialog)
+        self.widget.setGeometry(QtCore.QRect(60, 30, 797, 201))
+        self.widget.setObjectName("widget")
+        self.gridLayout = QtWidgets.QGridLayout(self.widget)
+        self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout.setObjectName("gridLayout")
+        self.label = QtWidgets.QLabel(self.widget)
+        self.label.setObjectName("label")
+        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
+        self.timeEdit = QtWidgets.QTimeEdit(self.widget)
+        self.timeEdit.setObjectName("timeEdit")
+        self.gridLayout.addWidget(self.timeEdit, 0, 1, 1, 1)
+        self.label_2 = QtWidgets.QLabel(self.widget)
+        self.label_2.setObjectName("label_2")
+        self.gridLayout.addWidget(self.label_2, 1, 0, 1, 1)
+        self.textEdit = QtWidgets.QTextEdit(self.widget)
+        self.textEdit.setObjectName("textEdit")
+        self.gridLayout.addWidget(self.textEdit, 1, 1, 1, 1)
+        self.label_4 = QtWidgets.QLabel(self.widget)
+        self.label_4.setObjectName("label_4")
+        self.gridLayout.addWidget(self.label_4, 1, 2, 1, 1)
+        self.textEdit_3 = QtWidgets.QTextEdit(self.widget)
+        self.textEdit_3.setObjectName("textEdit_3")
+        self.gridLayout.addWidget(self.textEdit_3, 1, 3, 1, 1)
+        self.label_3 = QtWidgets.QLabel(self.widget)
+        self.label_3.setObjectName("label_3")
+        self.gridLayout.addWidget(self.label_3, 2, 0, 1, 1)
+        self.textEdit_2 = QtWidgets.QTextEdit(self.widget)
+        self.textEdit_2.setObjectName("textEdit_2")
+        self.gridLayout.addWidget(self.textEdit_2, 2, 1, 1, 1)
+        self.label_5 = QtWidgets.QLabel(self.widget)
+        self.label_5.setObjectName("label_5")
+        self.gridLayout.addWidget(self.label_5, 2, 2, 1, 1)
+        self.textEdit_4 = QtWidgets.QTextEdit(self.widget)
+        self.textEdit_4.setObjectName("textEdit_4")
+        self.gridLayout.addWidget(self.textEdit_4, 2, 3, 1, 1)
+        self.label_6 = QtWidgets.QLabel(self.widget)
+        self.label_6.setObjectName("label_6")
+        self.gridLayout.addWidget(self.label_6, 3, 0, 1, 1)
+        self.textEdit_5 = QtWidgets.QTextEdit(self.widget)
+        self.textEdit_5.setObjectName("textEdit_5")
+        self.gridLayout.addWidget(self.textEdit_5, 3, 1, 1, 1)
+        self.label_7 = QtWidgets.QLabel(self.widget)
+        self.label_7.setObjectName("label_7")
+        self.gridLayout.addWidget(self.label_7, 3, 2, 1, 1)
+        self.lineEdit = QtWidgets.QLineEdit(self.widget)
+        self.lineEdit.setObjectName("lineEdit")
+        self.gridLayout.addWidget(self.lineEdit, 3, 3, 1, 1)
+        self.pushButton_3 = QtWidgets.QPushButton(self.widget)
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.gridLayout.addWidget(self.pushButton_3, 3, 4, 1, 1)
+        self.pushButton = QtWidgets.QPushButton(self.widget)
+        self.pushButton.setObjectName("pushButton")
+        self.gridLayout.addWidget(self.pushButton, 4, 1, 1, 1)
+        self.pushButton_2 = QtWidgets.QPushButton(self.widget)
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.gridLayout.addWidget(self.pushButton_2, 4, 2, 1, 2)
+
+        self.retranslateUi(Dialog)
+        self.pushButton_2.clicked.connect(Dialog.close)
+        self.timeEdit.timeChanged['QTime'].connect(self.timeEdit.setTime)
+        self.timeEdit.setDisplayFormat("HH:mm:ss")
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+    def retranslateUi(self, Dialog):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog.setWindowTitle(_translate("Dialog", "AutoEmail V1.0"))
+        self.label.setText(_translate("Dialog", "choose time"))
+        self.label_2.setText(_translate("Dialog", "your eamil"))
+        self.label_4.setText(_translate("Dialog", "authorization code"))
+        self.label_3.setText(_translate("Dialog", "leader email"))
+        self.label_5.setText(_translate("Dialog", "server name"))
+        self.label_6.setText(_translate("Dialog", "your number"))
+        self.label_7.setText(_translate("Dialog", "python path"))
+        self.pushButton_3.setText(_translate("Dialog", "choose"))
+        self.pushButton.setText(_translate("Dialog", "OK"))
+        self.pushButton_2.setText(_translate("Dialog", "Close"))
+
