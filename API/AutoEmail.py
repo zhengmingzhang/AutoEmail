@@ -89,4 +89,12 @@ class Ui_Dialog(object):
         self.pushButton_3.setText(_translate("Dialog", "choose"))
         self.pushButton.setText(_translate("Dialog", "OK"))
         self.pushButton_2.setText(_translate("Dialog", "Close"))
-
+if __name__=="__main__":
+    import sys
+    from PyQt5.QtGui import QIcon
+    app=QtWidgets.QApplication(sys.argv)
+    widget=QtWidgets.QWidget()
+    ui=Ui_Dialog()
+    ui.setupUi(widget)
+    widget.show()
+    sys.exit(app.exec_())

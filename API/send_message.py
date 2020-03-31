@@ -22,7 +22,7 @@ if __name__ == '__main__':
     parser.add_argument('--your_number', type=str, help='your phone number')
     set_args = parser.parse_args()
     text = auto_get_email.run_ing(set_args.username, set_args.authorization_code, set_args.server_name, set_args.leader_email)
-    auth_token = 'adeba142c44fbcb2c41ab77449307145'  # 去twilio.com注册账户获取token
+    auth_token = 'adeba142c44fbcb2c41ab77449307145'
     account_sid = 'ACe1db177682321d67e1738d44be6126e2'
     client = Client(account_sid, auth_token)
     sent_message(set_args.your_number, text)
