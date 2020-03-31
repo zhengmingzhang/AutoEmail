@@ -22,8 +22,9 @@ if __name__ == '__main__':
     parser.add_argument('--your_number', type=str, help='your phone number')
     set_args = parser.parse_args()
     text = auto_get_email.run_ing(set_args.username, set_args.authorization_code, set_args.server_name, set_args.leader_email)
-    auth_token = 'adeba142c44fbcb2c41ab77449307145'
+    auth_token = '00d93b6c1b581d15c75f26b18b1561f7'
     account_sid = 'ACe1db177682321d67e1738d44be6126e2'
     client = Client(account_sid, auth_token)
+    print(set_args.your_number)
     sent_message(set_args.your_number, text)
 
